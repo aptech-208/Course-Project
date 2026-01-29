@@ -18,9 +18,12 @@ dropbtn.addEventListener('click', (e) => {
     }
 });
 
-var swiper = new Swiper(".mySwiper", {
-    pagination: {
-        el: ".swiper-pagination",
-        dynamicBullets: true,
-    },
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 150) {
+        navbar.classList.add('nav-sticky-active');
+    } else {
+        navbar.classList.remove('nav-sticky-active');
+    }
 });

@@ -64,6 +64,11 @@ input {
     width: 100%;
 }
 
+.sbtn {
+    text-decoration: none;
+    color: #fff;
+}
+
 /* Right Side (Gradient Overlay) */
 .overlay-container {
     background: #FF416C;

@@ -5,22 +5,50 @@
     font-family: 'Arial', sans-serif;
 }
 
+/* 
 body {
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-}
+} */
 
 .contact-container {
-    display: flex;
-    background: #fff;
-    width: 90%;
-    max-width: 1100px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     overflow: hidden;
+    display: flex;
+    margin: 50px auto;
+    /* background: #fff; */
+    width: 90%;
+    max-width: 1100px;
+}
+
+.about-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        url('https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Update this in contact.css */
+body {
+    background-color: white;
+    display: block;
+    /* Change from flex to block */
+    min-height: 100vh;
 }
 
 /* Section On The Left */
@@ -29,12 +57,13 @@ body {
     padding: 60px;
 }
 
-h1 {
+.contact-form-section h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    color: black;
 }
 
-.subtitle {
+.contact-form-section .subtitle {
     color: #666;
     margin-bottom: 40px;
 }
@@ -47,20 +76,20 @@ h1 {
     color: #555;
 }
 
-.input-group {
+.contact-form-section .input-group {
     margin-bottom: 25px;
     position: relative;
 }
 
-.input-group label {
+.contact-form-section .input-group label {
     display: block;
     font-size: 0.9rem;
     color: #888;
     margin-bottom: 5px;
 }
 
-.input-group input,
-.input-group textarea {
+.contact-form-section .input-group input,
+.contact-form-section .input-group textarea {
     width: 100%;
     border: none;
     border-bottom: 1px solid #ddd;
@@ -77,7 +106,7 @@ h1 {
     margin-top: 5px;
 }
 
-.send-btn {
+.contact-send-btn {
     background-color: #e3b04b;
     color: white;
     border: none;
@@ -88,16 +117,17 @@ h1 {
     box-shadow: 0 4px 10px rgba(227, 176, 75, 0.3);
 }
 
-.social-links {
+.contact-social-links {
     margin-top: 50px;
 }
 
-.social-links h3 {
+.contact-social-links h3 {
     font-size: 1.1rem;
     margin-bottom: 15px;
+    color: black;
 }
 
-.social-links a {
+.contact-social-links a {
     text-decoration: none;
     color: #bbb;
     font-size: 0.75rem;
