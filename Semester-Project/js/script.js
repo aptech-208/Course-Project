@@ -27,3 +27,4 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('nav-sticky-active');
     }
 });
+
