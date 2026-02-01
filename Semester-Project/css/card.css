@@ -1,145 +1,128 @@
-/* Variables Start */
-:root {
-    --primary-dark: #1a1a1a;
-    --bg-gray: #f4f4f4;
-}
-/* Variables End */
+/* 
+* Design by Robert Mayer:https://goo.gl/CJ7yC8
+*
+*I intentionally left out the line that was supposed to be below the subheader simply because I don't like how it looks.
+*
+* Chronicle Display Roman font was substituted for similar fonts from Google Fonts.
+*/
 
-.card {
-    width: 300px;
-    background-color: white;
-    border-radius: 20px;
-    padding: 15px;
-    position: relative;
-    overflow: hidden;
-    font-family: sans-serif;
-    box-shadow: 0 10px 30px rgb(0, 0, 0, 0.1); 
+body {
+    background-color: #fdf1ec;
 }
 
-/* The Drawer */
-.discount-drawer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    /* Glass effect */
-    z-index: 10;
-    transform: translateY(100%);
-    /* Start hidden below */
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.cards {
+    height: 420px;
+    width: 654px;
+    margin: 50px auto;
+    border-radius: 7px 7px 7px 7px;
+    /* VIA CSS MATIC https://goo.gl/cIbnS */
+    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
 }
 
-.discount-drawer.active {
-    transform: translateY(0);
-    /* Slide up */
+.product-img {
+    /* float: left; */
+    height: 420px;
+    width: 327px;
 }
 
-.discount-list {
-    list-style: none;
-    padding: 0;
+.product-img img {
+    border-radius: 7px 0 0 7px;
+}
+
+.product-info {
+    /* float: left; */
+    height: 420px;
+    width: 327px;
+    border-radius: 0 7px 10px 7px;
+    background-color: #ffffff;
+}
+
+.product-text {
+    height: 300px;
+    width: 327px;
+}
+
+.product-text h1 {
+    margin: 0 0 0 38px;
+    padding-top: 52px;
+    font-size: 34px;
+    color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+    font-family: 'Bentham', serif;
+}
+
+.product-text h2 {
+    margin: 0 0 47px 38px;
     font-size: 13px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #d2d2d2;
+    letter-spacing: 0.2em;
 }
 
-.discount-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+.product-text p {
+    height: 125px;
+    margin: 0 0 0 38px;
+    font-family: 'Playfair Display', serif;
+    color: #8d8d8d;
+    line-height: 1.7em;
+    font-size: 15px;
+    font-weight: lighter;
+    overflow: hidden;
 }
 
-/* Cards Elements */
-.product-name {
-    background-color: var(--bg-gray);
-    border-radius: 15px;
-    padding: 20px;
-    float: left;
+.product-price-btn {
+    height: 103px;
+    width: 327px;
+    margin-top: 17px;
+    position: relative;
 }
 
-.badge {
-    background-color: black;
-    color: white;
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 10px;
-    float: left;
+.product-price-btn p {
+    display: inline-block;
+    position: absolute;
+    top: -13px;
+    height: 50px;
+    font-family: 'Trocchi', serif;
+    margin: 0 0 0 38px;
+    font-size: 28px;
+    font-weight: lighter;
+    color: #474747;
 }
 
-.product-image {
-    background-color: var(--bg-gray);
-    border-radius: 15px;
-    padding: 20px;
-    float: left;
+span {
+    display: inline-block;
+    height: 50px;
+    font-family: 'Suranna', serif;
+    font-size: 34px;
 }
 
-.product-image > img {
-    width: 250px;
-    height: 250px;
-    object-fit: contain;
-    display: block;
-}
-
-.price-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px 0 ;
-}
-
-.price {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.rating {
-    background: #fff3e0;
-    color: #ff9800;
-    padding: 2px 6px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.controls {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.qty-selector {
-    flex: 1;
-    background: var(--bg-gray);
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.cart-btn {
-    background: black;
-    color: #f4f4f4;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 10px;
+.product-price-btn button {
+    float: right;
+    display: inline-block;
+    height: 50px;
+    width: 176px;
+    margin: 0 40px 0 16px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 60px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    background-color: #9cebd5;
     cursor: pointer;
+    outline: none;
 }
 
-.toggle-trigger {
-    width: 100%;
-    background: var(--primary-dark);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+.product-price-btn button:hover {
+    background-color: #79b0a1;
 }
-

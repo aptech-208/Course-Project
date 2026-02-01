@@ -6,41 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChairStore | Collections</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/nav-foot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#">CHAIR<span>HUB</span></a>
-            </div>
+    <nav class="sidebar" id="sidebar">
+        <a href="#" class="logo">CHAIR<span>CO.</span></a>
 
-            <ul class="nav-links" id="navMenu">
-                <li class="mobile-search">
-                    <input type="search" placeholder="Search..." class="search-input-unicode">
-                </li>
-                <li><a href="./index.html">Home</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Collections <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Office Chairs</a></li>
-                        <li><a href="#">Luxury Sofas</a></li>
-                        <li><a href="#">Gaming Chairs</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Best Sellers</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
+        <div class="burger-icon" id="menuBtn">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </div>
 
-            <div class="nav-icons">
-                <input type="search" placeholder="Search..." class="search-input-unicode">
-                <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+        <ul class="nav-links">
+            <li class="nav-item" style="--i:1"><a href="./index.html" class="nav-link">Home</a></li>
+            <li class="nav-item" style="--i:2"><a href="./furniture.html" class="nav-link">Furniture</a></li>
+            <li class="nav-item" style="--i:3"><a href="./aboutus.html" class="nav-link">About Us</a></li>
+            <li class="nav-item" style="--i:4"><a href="./contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="auth-group">
+            <a href="#" class="login-btn">Log In</a>
+            <a href="#" class="signup-btn">Sign Up</a>
         </div>
     </nav>
 
@@ -55,62 +48,44 @@
             <h1>Elevate Your Comfort</h1>
             <p>Discover our exclusive collection of premium chairs designed for your lifestyle.</p>
             <div class="hero-btns">
-                <a href="#" class="btn-primary">Shop Collection</a>
-                <a href="./login.html" class="btn-secondary">Login Now</a>
+                <a href="./contact.html" class="btn-primary">Contact Us</a>
+                <a href="./aboutus.html" class="btn-secondary">About Us</a>
             </div>
         </div>
     </header>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
+    <footer class="site-footer">
+        <div class="footer-grid">
             <div class="footer-col">
-                <h3>CHAIR<span>HUB</span></h3>
-                <p>Premium quality chairs for your home and office. Comfort and style delivered to your doorstep.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
+                <a href="#" class="logo">CHAIR<span>CO.</span></a>
+                <p style="margin-top:20px;">Premium artisan furniture designed for the modern home. Merging aesthetic
+                    beauty with unparalleled ergonomic support.</p>
             </div>
-
             <div class="footer-col">
-                <h4>Quick Links</h4>
+                <h4>Explore</h4>
                 <ul>
+                    <li><a href="#">Collections</a></li>
                     <li><a href="./aboutus.html">About Us</a></li>
-                    <li><a href="#">Shop Now</a></li>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Offers</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4>Support</h4>
                 <ul>
                     <li><a href="./faqs.html">FAQs</a></li>
-                    <li><a href="./shipingPolicy.html">Shipping Policy</a></li>
-                    <li><a href="./return.html">Returns</a></li>
-                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Shop Policy</a></li>
                 </ul>
             </div>
-
-            <div class="footer-col">
-                <h4>Join Our Newsletter</h4>
-                <div class="newsletter">
-                    <input type="email" placeholder="Your Email">
-                    <button type="submit">Join</button>
-                </div>
-                <p class="payment-text">We accept all major cards</p>
-            </div>
         </div>
-
         <div class="footer-bottom">
-            <p>&copy; 2026 ChairHub. All Rights Reserved | Designed by You</p>
+            &copy; 2026 ChairCo. All Rights Reserved.
         </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./js/nav-foot.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./js/script.js"></script>
 
 </body>
