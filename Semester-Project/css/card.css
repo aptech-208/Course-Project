@@ -1,128 +1,297 @@
-/* 
-* Design by Robert Mayer:https://goo.gl/CJ7yC8
-*
-*I intentionally left out the line that was supposed to be below the subheader simply because I don't like how it looks.
-*
-* Chronicle Display Roman font was substituted for similar fonts from Google Fonts.
-*/
+:root {
+    --accent: #d4a373;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --blur: 20px;
+}
 
 body {
-    background-color: #fdf1ec;
+    background-color: #0a0a0a;
+    font-family: 'Inter', sans-serif;
 }
 
-.cards {
-    height: 420px;
-    width: 654px;
-    margin: 50px auto;
-    border-radius: 7px 7px 7px 7px;
-    /* VIA CSS MATIC https://goo.gl/cIbnS */
-    -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+.card .product-card {
+    margin: 40px auto;
 }
 
-.product-img {
-    /* float: left; */
-    height: 420px;
-    width: 327px;
+.card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 40px;
 }
 
-.product-img img {
-    border-radius: 7px 0 0 7px;
-}
-
-.product-info {
-    /* float: left; */
-    height: 420px;
-    width: 327px;
-    border-radius: 0 7px 10px 7px;
-    background-color: #ffffff;
-}
-
-.product-text {
-    height: 300px;
-    width: 327px;
-}
-
-.product-text h1 {
-    margin: 0 0 0 38px;
-    padding-top: 52px;
-    font-size: 34px;
-    color: #474747;
-}
-
-.product-text h1,
-.product-price-btn p {
-    font-family: 'Bentham', serif;
-}
-
-.product-text h2 {
-    margin: 0 0 47px 38px;
-    font-size: 13px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: #d2d2d2;
-    letter-spacing: 0.2em;
-}
-
-.product-text p {
-    height: 125px;
-    margin: 0 0 0 38px;
-    font-family: 'Playfair Display', serif;
-    color: #8d8d8d;
-    line-height: 1.7em;
-    font-size: 15px;
-    font-weight: lighter;
+/* --- THE CARD --- */
+.product-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    width: 320px;
+    /* Default width for desktop */
     overflow: hidden;
-}
-
-.product-price-btn {
-    height: 103px;
-    width: 327px;
-    margin-top: 17px;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
     position: relative;
 }
 
-.product-price-btn p {
-    display: inline-block;
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Container */
+.img-container {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #111;
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Badge (Brand Name) */
+.brand-badge {
     position: absolute;
-    top: -13px;
-    height: 50px;
-    font-family: 'Trocchi', serif;
-    margin: 0 0 0 38px;
-    font-size: 28px;
-    font-weight: lighter;
-    color: #474747;
-}
-
-span {
-    display: inline-block;
-    height: 50px;
-    font-family: 'Suranna', serif;
-    font-size: 34px;
-}
-
-.product-price-btn button {
-    float: right;
-    display: inline-block;
-    height: 50px;
-    width: 176px;
-    margin: 0 40px 0 16px;
-    box-sizing: border-box;
-    border: transparent;
-    border-radius: 60px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
-    background-color: #9cebd5;
-    cursor: pointer;
-    outline: none;
+    letter-spacing: 1px;
+    border: 1px solid var(--glass-border);
 }
 
-.product-price-btn button:hover {
-    background-color: #79b0a1;
+/* Content Area */
+.product-info {
+    padding: 25px;
+}
+
+.product-info h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.product-info p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Price & CTA Row */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.price span {
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-right: 2px;
+}
+
+.buy-btn {
+    background: white;
+    color: black;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.buy-btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 80px 40px;
+    background: transparent;
+    position: relative;
+    z-index: 10;
+    margin-top: 0 !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.product-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    view-timeline-name: --card-fade;
+    view-timeline-axis: block;
+    animation-timeline: --card-fade;
+    animation-name: fadeInUp;
+    animation-range: entry 10% cover 30%;
+    animation-fill-mode: both;
+}
+
+
+/* L CARDs */
+:root {
+    --accent: #d4a373;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --blur: 20px;
+}
+
+.hero-bottom-fade {
+    height: 150px;
+    margin-top: -150px;
+    position: relative;
+    z-index: 2;
+}
+
+.product-grid-section {
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.premium-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.premium-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212, 163, 115, 0.05) 0%, transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* This filter helps blend images with light backgrounds into the dark theme */
+    mix-blend-mode: lighten;
+}
+
+.card-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.card-content h3 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+
+/* --- RESPONSIVE MEDIA QUERY --- */
+@media (max-width: 480px) {
+    .product-card {
+        width: 90%;
+        /* Scale to phone width */
+        margin: 20px auto;
+    }
+
+    .img-container {
+        height: 220px;
+    }
+
+    .product-info h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 1150px) {
+    .card {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        margin-left: 5%;
+    }
+
+    .lcard {
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 20px;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+        margin-left: 0;
+    }
+
+    .lcard {
+        margin-left: 0;
+    }
 }
