@@ -16,7 +16,7 @@ body {
 
 .card {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     padding: 40px;
 }
@@ -135,7 +135,7 @@ body {
 
 .card {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     padding: 80px 40px;
     background: transparent;
@@ -264,7 +264,7 @@ body {
 
 @media (max-width: 1150px) {
     .card {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 35px;
         margin-left: 5%;
     }
@@ -272,15 +272,6 @@ body {
     .lcard {
         margin-left: 5%;
     }
-}
-
-@media (max-width: 768px) {
-    .card {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        padding: 20px;
-    }
-
 }
 
 @media (max-width: 550px) {

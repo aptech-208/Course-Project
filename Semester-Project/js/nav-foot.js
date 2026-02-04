@@ -1,25 +1,30 @@
-const sidebar = document.getElementById('sidebar');
-const menuBtn = document.getElementById('menuBtn');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        sidebar.classList.add('scrolled');
-    } else {
-        sidebar.classList.remove('scrolled');
-    }
-});
+$(document).ready(function () {
+    // 1. DYNAMIC ISLAND SCROLL LOGIC
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 60) {
+            $('#islandContainer').addClass('scrolled');
+        } else {
+            $('#islandContainer').removeClass('scrolled');
+        }
+    });
 
-menuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (window.innerWidth <= 768) {
-        sidebar.classList.toggle('mobile-open');
-    } else {
-        sidebar.classList.remove('scrolled');
-    }
-});
+    // 2. REVEAL ANIMATIONS
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                $(entry.target).addClass('reveal');
+            }
+        });
+    }, { threshold: 0.2 });
 
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        sidebar.classList.remove('mobile-open');
+    document.querySelectorAll('section').forEach(section => observer.observe(section));
+
+    // 3. SMOOTH SCROLLING
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(this.hash).offset().top - 100
+        }, 800);
     });
 });
